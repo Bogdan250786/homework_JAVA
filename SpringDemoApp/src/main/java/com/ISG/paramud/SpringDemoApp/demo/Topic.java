@@ -1,15 +1,22 @@
 package com.ISG.paramud.SpringDemoApp.demo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Objects;
 
+@Entity
 public class Topic {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String theme;
     LocalDate date;
+    
+    public Topic() {
+    }
     
     public Topic(Long id, String name, String theme, LocalDate date) {
         this.id = id;
@@ -17,6 +24,7 @@ public class Topic {
         this.theme = theme;
         this.date = date;
     }
+    
     
     public Long getId() {
         return id;
@@ -48,5 +56,15 @@ public class Topic {
     
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+    
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", theme='" + theme + '\'' +
+                ", date=" + date +
+                '}';
     }
 }
