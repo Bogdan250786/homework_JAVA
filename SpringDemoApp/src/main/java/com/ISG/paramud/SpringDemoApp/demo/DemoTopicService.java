@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class DemoTopicComponent {
+public class DemoTopicService {
+    
     
     public List<Topic> getDemoTopicList() {
         List<Topic> demos = new ArrayList<Topic>();
